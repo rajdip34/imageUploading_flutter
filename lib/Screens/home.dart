@@ -37,8 +37,8 @@ class _HomeState extends State<Home> {
         "Bearer 11ab4bf7ffaac804bc54548784bb66e9d7f21327";
 
     final file = await http.MultipartFile.fromPath(
-      'image', image.path,
-      // contentType: MediaType(mimeTypeData[0], mimeTypeData[1])
+      'image',
+      image.path,
     );
     imageUploadRequest.fields['image'] = mimeTypeData[1];
     imageUploadRequest.files.add(file);
@@ -70,7 +70,7 @@ class _HomeState extends State<Home> {
     });
   }
 
-  //start image uplodading
+  //start image uploading
 
   void _startImageUploading() async {
     final Map<String, dynamic> response = await _uploadImage(_imageFile);
@@ -121,8 +121,8 @@ class _HomeState extends State<Home> {
         });
   }
 
-// uplode button
-  Widget _buildUplodeButton() {
+// uploade button
+  Widget _buildUploadeButton() {
     Widget btnW = Container();
 
     if (_isUploading) {
@@ -188,7 +188,7 @@ class _HomeState extends State<Home> {
                 alignment: Alignment.topCenter,
                 width: MediaQuery.of(context).size.width,
               ),
-        _buildUplodeButton()
+        _buildUploadeButton()
       ],
     ));
   }
